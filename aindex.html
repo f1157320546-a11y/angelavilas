@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Página Troll</title>
+<style>
+body, html { margin:0; padding:0; overflow:hidden; background:black; }
+video { position:fixed; top:0; left:0; width:100%; height:100%; object-fit:cover; }
+img { position:fixed; top:50%; left:50%; transform:translate(-50%,-50%); max-width:50%; pointer-events:none; }
+#start {
+    position:fixed;
+    top:0; left:0;
+    width:100%; height:100%;
+    background:black;
+    color:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:2em;
+    cursor:pointer;
+    z-index:10;
+    flex-direction: column;
+}
+a { color:white; text-decoration:none; margin-top:20px; font-size:0.7em; }
+</style>
+</head>
+<body>
+
+<video id="video" src="https://rr4---sn-bg0e6nez.googlevideo.com/videoplayback?expire=1756545187&ei=Q2yyaLTRD8S9kucP6dz46A8&ip=103.130.178.171&id=o-AOBGl8q01kUE-aFBAxmF_xBUslr6NseGNAsEthIH_XZG&itag=18&source=youtube&requiressl=yes&xpc=EgVo2aDSNQ%3D%3D&bui=AY1jyLOc4p5JZ2Io2eukpn_oAZwZJjrMGw_VOUWx8nU3luLnv7vcq96-TIy8JRAvjZf7Lgjpb4V64klN&spc=l3OVKcvJuHmlOyBL093sHCLhDcqt_GUvVz3Fes2YwyVoJ0-AY0J4gU9E4CWfgYJrFqg&vprv=1&svpuc=1&mime=video%2Fmp4&rqh=1&cnr=14&ratebypass=yes&dur=32.113&lmt=1717362772519069&fexp=24350590,24350737,24350827,24351316,24351318,24351528,24351596,24352220,24352559,24352568,24352573,24352574,24352580,24352582,24352697,24352699,24352882,24352884,24352961,24352989,24352991,24353168,24353170,51552689,51565116,51565682,51580968&c=ANDROID&txp=5538434&sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cxpc%2Cbui%2Cspc%2Cvprv%2Csvpuc%2Cmime%2Crqh%2Ccnr%2Cratebypass%2Cdur%2Clmt&sig=AJfQdSswRQIgBln8nrUum2VH6x8D2gap4ou6c55cSxDcQWyfLxPyNg4CIQCXlXn76ACt0bVU6UbBXvjql-B-iDsKOBVQufTMmHJapA%3D%3D&rm=sn-jvhj5nu-cvnr76,sn-ab5eld7e&rrc=79,104,80&req_id=16065578799ba3ee&ipbypass=yes&redirect_counter=3&cm2rm=sn-x1xsl76&cms_redirect=yes&cmsv=e&met=1756523664,&mh=Xi&mip=2800:810:472:3c4:a9a2:2b38:10d:3741&mm=34&mn=sn-bg0e6nez&ms=ltu&mt=1756523333&mv=m&mvi=4&pl=48&rms=ltu,au&lsparams=ipbypass,met,mh,mip,mm,mn,ms,mv,mvi,pl,rms&lsig=APaTxxMwRQIhAJITNBB92U-tAByVL_AqNjukJGaWn5u6-NtxLYm2jGi4AiAS2e8jxyAMcd-oA5RHe-pO28ceYWSCOIwBsSrk2kBR2Q%3D%3D" loop playsinline></video>
+<img src="mono-fuckyou.png" alt="Mono" />
+<div id="start">
+    click
+    <a href="http://127.0.0.1:5500/index.html" target="_blank">Abrir página en nueva pestaña</a>
+</div>
+
+<script>
+const video = document.getElementById('video');
+const start = document.getElementById('start');
+
+// Bloqueo de teclas y clicks
+document.addEventListener('keydown', e => e.preventDefault());
+document.addEventListener('contextmenu', e => e.preventDefault());
+document.addEventListener('mousedown', e => e.preventDefault());
+document.addEventListener('touchstart', e => e.preventDefault());
+
+// Alertas troll
+setInterval(() => { alert("Tu mama bien rica nachito 😜"); }, 1500);
+
+// Evento para activar sonido y fullscreen
+start.onclick = () => {
+    // Activar sonido
+    video.muted = false;
+    video.play();
+
+    // Pantalla completa
+    if (document.documentElement.requestFullscreen) {
+        document.documentElement.requestFullscreen();
+    }
+
+    // Ocultar overlay de inicio (la parte click principal)
+    start.style.display = 'none';
+};
+</script>
+
+</body>
+</html>
